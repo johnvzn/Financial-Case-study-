@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UX/UI Portfolio Starter
 
-## Getting Started
+Базовый старт проекта под личное портфолио UX/UI дизайнера.
 
-First, run the development server:
+## Project Rules
+
+Каноничные правила стека и архитектуры:
+[`PROJECT_RULES.md`](./PROJECT_RULES.md)
+
+Каноничная структура проекта:
+[`PROJECT_STRUCTURE.md`](./PROJECT_STRUCTURE.md)
+
+## Запуск
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Текущий этап
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Главная страница с первым экраном (hero)
+- Базовая страница `/cases` как заготовка под кейсы
+- Минимальная структура без лишних слоёв
 
-## Learn More
+## Deploy on Render
 
-To learn more about Next.js, take a look at the following resources:
+Проект готов к деплою как `Web Service` на Render.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Что уже настроено:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `render.yaml` с командами сборки и запуска
+- `npm run build` успешно проходит в production-режиме
+- приложение стартует через `next start`, что подходит для Render Web Service
 
-## Deploy on Vercel
+Быстрый сценарий деплоя:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+git push
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Откройте [Render Dashboard](https://dashboard.render.com/).
+2. Нажмите `New` -> `Web Service`.
+3. Подключите GitHub/GitLab-репозиторий с папкой `case-study-app`.
+4. Если Render обнаружит `render.yaml`, подтвердите создание сервиса по blueprint.
+5. Дождитесь первого deploy.
+
+Если позже в приложении начнёт использоваться база данных или Supabase на рантайме, добавьте в Render переменные окружения из `.env.example`.

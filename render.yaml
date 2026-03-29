@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: case-study-app
+    runtime: node
+    plan: free
+    rootDir: .
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /
+    autoDeploy: true
